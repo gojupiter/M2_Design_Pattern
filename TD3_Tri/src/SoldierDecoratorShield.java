@@ -7,6 +7,6 @@ public class SoldierDecoratorShield extends SoldierDecorator{
 	}
 	
 	public boolean wardOff(int force) {
-		return super.wardOff(force-1);
+		return super.wardOff(force-5);
 	}
 }

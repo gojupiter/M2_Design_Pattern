@@ -10,4 +10,8 @@ abstract class AbstractSoldier implements Soldier {
         vie = (vie > force) ? vie - force : 0;
         return vie > 0;
     }
+    
+    public int get_vie() {
+    	return vie;
+    }
 }
