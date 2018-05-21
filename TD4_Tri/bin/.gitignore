@@ -1,0 +1,12 @@
+/AbstractSoldier.class
+/Horsemen.class
+/HorsemenProxy.class
+/Infantrymen.class
+/InfantrymenProxy.class
+/Main.class
+/Soldier.class
+/SoldierDecorator.class
+/SoldierDecoratorShield.class
+/SoldierDecoratorSword.class
+/equipment.class
+/ArmyGroup.class
