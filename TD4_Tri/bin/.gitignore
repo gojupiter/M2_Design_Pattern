@@ -1,4 +1,5 @@
 /AbstractSoldier.class
+/ArmyGroup.class
 /Horsemen.class
 /HorsemenProxy.class
 /Infantrymen.class
@@ -9,4 +10,3 @@
 /SoldierDecoratorShield.class
 /SoldierDecoratorSword.class
 /equipment.class
-/ArmyGroup.class
