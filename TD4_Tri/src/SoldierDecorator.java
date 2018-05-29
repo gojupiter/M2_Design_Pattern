@@ -16,5 +16,13 @@ public class SoldierDecorator implements Soldier {
 		// TODO Auto-generated method stub
 		return soldier.wardOff(force);
 	}
+	
+    public void accept(visitorInterface v) {
+		v.visit(this);
+	}
+    
+	public String toString() {
+		return soldier.toString();
+	}
 
 }

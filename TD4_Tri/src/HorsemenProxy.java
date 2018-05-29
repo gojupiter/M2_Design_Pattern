@@ -37,5 +37,12 @@ public class HorsemenProxy implements Soldier {
 		shield.increaseValue(val);
 		System.out.println("Your shield defense = " + shield.getValue());
 	}
-
+	
+	public void accept(visitorInterface v) {
+		v.visit(this);
+	}
+	
+	public String toString() {
+		return "Horsemen(proxy)";
+	}
 }

@@ -10,4 +10,12 @@ public class Infantrymen extends AbstractSoldier {
     public int hit() {
         return FORCE_INFANTRYMEN;
     }
+    
+    public void accept(visitorInterface v) {
+		v.visit(this);
+	}
+    
+	public String toString() {
+		return "Infantrymen";
+	}
 }

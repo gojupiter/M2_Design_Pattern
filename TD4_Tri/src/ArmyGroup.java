@@ -79,7 +79,7 @@ public class ArmyGroup {
     }
 
     public String toString(){
-        return "Army : " + listSubGroups.size() + " groups, " + listSoldiers.size() + " soldiers. Total : " + getTotalSoldier();
+        return "Army : " + listSubGroups.size() + " subgroups, " + listSoldiers.size() + " soldiers (not in subgroup). Total : " + getTotalSoldier();
     }
 
     public void addSword(){
@@ -109,4 +109,8 @@ public class ArmyGroup {
             }
         }
     }
+    
+    public void accept(visitorInterface v) {
+		v.visit(this);
+	}
 }

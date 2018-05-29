@@ -10,4 +10,13 @@ public class Horsemen extends AbstractSoldier {
     public int hit() {
         return FORCE_HORSEMEN;
     }
+    
+    public void accept(visitorInterface v) {
+		v.visit(this);
+	}
+    
+	public String toString() {
+		return "Horsemen";
+	}
+	
 }

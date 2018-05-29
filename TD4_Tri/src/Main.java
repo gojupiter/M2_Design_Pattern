@@ -32,6 +32,7 @@ public class Main {
         group3.addSoldier(new HorsemenProxy(44));
         group3.addSubGroup(group1);
         group3.addSubGroup(group2);
+        group3.addSoldier(new HorsemenProxy(87));
         
         ArmyGroup group4 = new ArmyGroup();
         ArmyGroup group5 = new ArmyGroup();
@@ -49,6 +50,7 @@ public class Main {
         group6.addSoldier(new HorsemenProxy(100));
         group6.addSubGroup(group4);
         group6.addSubGroup(group5);
+      
         
         group3.addSword();
         group6.addShield();
@@ -65,5 +67,10 @@ public class Main {
 
         System.out.println("Death of the " + (vf ? "Horsemen" : "Infantrymen")
                 + " in " + ncoups + " shots");
+        
+        // Visitor    
+        group3.accept(new visitorCountArmy());
+        group3.accept(new visitorDisplayArmy());
+       ;
     }
 }

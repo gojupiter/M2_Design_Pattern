@@ -1,5 +1,6 @@
 package edu.sa.td4.Question2;
 
+
 public interface ArmyVisitor {
     public void visit(Group g);
     public void visit(ProxyHorsemen horsemen);
