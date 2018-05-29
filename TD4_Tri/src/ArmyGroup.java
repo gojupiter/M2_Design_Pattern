@@ -30,25 +30,25 @@ public class ArmyGroup {
 
     public int hit(){
 
-        int total=0;
+        int damage=0;
         for(Soldier s : listSoldiers){
-            total += s.hit();
+            damage += s.hit();
         }
 
-        for(ArmyGroup g : listSubGroups){
-            total += g.hit();
+        for(ArmyGroup ag : listSubGroups){
+            damage += ag.hit();
         }
-        System.out.println( toString() + " attack with " + total + " force" );
-        return total;
+        System.out.println( toString() + " Damage dealt : " + damage + " force" );
+        return damage;
     }
 
     public boolean wardOff(int force){
-        System.out.println( toString() + " receive attack with " + force + " force" );
-        int each_receive_hit = (int) Math.floor(force / getTotalSoldier());
-        System.out.println("Each receive hit: " + each_receive_hit );
+        System.out.println( toString() + " Damage taken : " + force + " force" );
+        int damage_per_soldier = (int) Math.floor(force / getTotalSoldier());
+        System.out.println("Each soldier is hit by : " + damage_per_soldier );
         for(int i =0; i < listSubGroups.size(); i++){
         	ArmyGroup g = listSubGroups.get(i);
-            int group_receive_hit = each_receive_hit * g.getTotalSoldier();
+            int group_receive_hit = damage_per_soldier * g.getTotalSoldier();
             if(!g.wardOff(group_receive_hit)){
                 i--;
                 listSubGroups.remove(g);
@@ -58,7 +58,7 @@ public class ArmyGroup {
 
         for(int i =0; i < listSoldiers.size(); i++){
             Soldier s = listSoldiers.get(i);
-            if(!s.wardOff(each_receive_hit)){
+            if(!s.wardOff(damage_per_soldier)){
                 i--;
                 listSoldiers.remove(s);
             }
@@ -70,8 +70,8 @@ public class ArmyGroup {
 
     public int getTotalSoldier(){
         int total = 0;
-        for(ArmyGroup g : listSubGroups){
-            total += g.getTotalSoldier();
+        for(ArmyGroup ag : listSubGroups){
+            total += ag.getTotalSoldier();
         }
         total += listSoldiers.size();
 
@@ -79,13 +79,12 @@ public class ArmyGroup {
     }
 
     public String toString(){
-        String sb = "Group of " + listSubGroups.size() + " groups and " + listSoldiers.size() + " soldiers and " + getTotalSoldier() + " soldiers in total";
-        return sb;
+        return "Army : " + listSubGroups.size() + " groups, " + listSoldiers.size() + " soldiers. Total : " + getTotalSoldier();
     }
 
     public void addSword(){
-        for(ArmyGroup g : listSubGroups)
-            g.addSword();
+        for(ArmyGroup ag : listSubGroups)
+            ag.addSword();
 
         for(Soldier s : listSoldiers){
         	if(HorsemenProxy.class.isInstance(s)){
@@ -98,8 +97,8 @@ public class ArmyGroup {
     }
 
     public void addShield(){
-        for(ArmyGroup g : listSubGroups)
-            g.addShield();
+        for(ArmyGroup ag : listSubGroups)
+            ag.addShield();
 
         for(Soldier s : listSoldiers) {
             if(HorsemenProxy.class.isInstance(s)){
