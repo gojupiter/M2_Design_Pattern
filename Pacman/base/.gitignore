@@ -1,0 +1,12 @@
+/BoxBoundedObject.class
+/Collideable.class
+/Drawable.class
+/IntersectTools.class
+/Movable.class
+/Move.class
+/MoveDefault.class
+/MovingStrategy.class
+/MovingStrategyDefault.class
+/MovingStrategyKeyboard.class
+/MovingStrategyRandom.class
+/Obstacle.class
