@@ -10,7 +10,6 @@
 /SoldierDecoratorShield.class
 /SoldierDecoratorSword.class
 /equipment.class
-/visitorInterface.class
-/ArmyVisitor.class
-/visitorDisplayArmy.class
 /visitorCountArmy.class
+/visitorDisplayArmy.class
+/visitorInterface.class
